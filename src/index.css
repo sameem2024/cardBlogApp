@@ -1,13 +1,95 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+
+.topIcon{
+    font-size: 25px;
+    margin-right: 10px;
+    color:#444;
+    cursor: pointer;
+}
+li{
+    list-style: none;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.sidebarTitle{
+    font-family:"varela Round",sans-serif ;
+    padding:10px;
+    width:90%;
+    border-top:solid 1px #a7a4a4;
+    border-bottom:solid 1px #a7a4a4;
+    text-align:center;
+    line-height:19px;
+    color:#222222;
+    font-weight:600;
+    font-size: 12px;
+}
+.singleIcon{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.singleIcon:first-child{
+    color:teal;
+}
+.singleIcon:last-child{
+    color:tomato;
+}
+
+.writeIcon{
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    border: 1px solid;
+    border-radius: 50%;
+    color: rgb(129, 125, 125);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.settingIcon{
+    width:25px;
+    height:25px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    margin-left: 10px;
+    color:white;
+    background-color: rgb(234, 142, 142);
+    cursor: pointer;
+}
+.settingForm > label{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.settingForm > input{
+    color:gray;
+    margin-block: 10px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    padding: 10px;
+}
+
+.inputstyle{
+    padding:10px;
+    background-color: white;
+    border:none;
+    border-radius: 10px;
+}
+.labelstyle{
+    margin: 10px 0;
+}
+.searchContent:hover > input{
+    border:1px solid rgb(206, 171, 107);
 }
