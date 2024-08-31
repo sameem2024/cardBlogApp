@@ -2,6 +2,7 @@ import { createContext,useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
 import { datas } from "../data/data";
+import {lifeData,musicData,moviesData,sportsData,styleData,techData} from '../assets/ImageList';
 export const context = createContext(null);
 
 const GlobalContext = ({children}) => {
@@ -41,7 +42,7 @@ const GlobalContext = ({children}) => {
 
   return (
     <context.Provider value = 
-      {{currentUser,addBlog,handleUser,handleLogin,userName,blog}}>
+      {{currentUser,addBlog,handleUser,handleLogin,userName,blog,lifeData,musicData,moviesData,sportsData,styleData,techData}}>
         {children}
     </context.Provider> 
   )

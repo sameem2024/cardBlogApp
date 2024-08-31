@@ -7,25 +7,23 @@ import SettingsPage from "./pages/SettingsPage";
 import SinglePage from "./pages/SinglePage";
 import Music from "./components/Music";
 
+
 import { Routes, Route } from "react-router-dom";
-import { musicData, lifeData, sportsData, styleData, techData, moviesData } from "./data/data";
 import { useContext } from "react";
 import { context } from "./context/Global";
 
 
-
 function App() {
-  const {currentUser} = useContext(context);
-
+  const {currentUser,lifeData,moviesData,musicData,sportsData,styleData,techData} = useContext(context);
+  
   return (
     <>
 
     <Navbar /> 
-
-
+    
       <Routes>
-
-        <Route path='/' element={<HomePage />} />
+        
+        <Route path='/'  element={<HomePage />} />
 
         <Route path='/posts' element={<HomePage />} />
 
@@ -39,12 +37,12 @@ function App() {
 
         <Route path='/settings' element= {currentUser ? <SettingsPage /> : <LoginPage />}/>
 
-        <Route path='/music' element={<Music category="Music" data={musicData} />} />
-        <Route path='/life' element={<Music category="Life" data={lifeData} />} />
-        <Route path='/movies' element={<Music category="Movies" data={moviesData} />} />
-        <Route path='/sports' element={<Music category="Sports" data={sportsData} />} />
-        <Route path='/style' element={<Music category="Style" data={styleData} />} />
-        <Route path='/tech' element={<Music category="Technology" data={techData} />} />
+        <Route path='/life' element={<Music category="life" imageList={lifeData}/>} /> 
+        <Route path='/music' element={<Music category="music" imageList={musicData}/>} />
+        <Route path='/movies' element={<Music category="movies" imageList={moviesData} />} />
+        <Route path='/sports' element={<Music category="sports" imageList={sportsData}/>} />
+        <Route path='/style' element={<Music category="style" imageList={styleData}/>} />
+        <Route path='/tech' element={<Music category="technology" imageList={techData} />} />
 
       </Routes>
 

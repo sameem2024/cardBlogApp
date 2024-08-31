@@ -5,7 +5,7 @@ import { context } from '../context/Global';
 const SinglePost = () => {
     const {userName,blog} = useContext(context);
     const {id} = useParams();
-    const {img,title,time} = blog.find(dataItem => dataItem.id == id);
+    const {img,title,time} = blog.find(dataItem => dataItem.id === Number(id));
     
   return (
     <section className='flex-9 font-Josefin'>

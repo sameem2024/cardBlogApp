@@ -1,4 +1,4 @@
-import profile from '../assets/about.avif';
+import profile from '../assets/about.avif'
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
