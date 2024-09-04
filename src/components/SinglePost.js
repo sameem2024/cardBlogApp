@@ -3,9 +3,20 @@ import { useContext } from 'react';
 import { context } from '../context/Global';
 
 const SinglePost = () => {
-    const {userName,blog} = useContext(context);
+    const {userName,blog,handleDeleteBlog,handleEditBlog} = useContext(context);
     const {id} = useParams();
-    const {img,title,time} = blog.find(dataItem => dataItem.id === Number(id));
+    const {img,title,time,author} = blog.find(dataItem => dataItem.id === Number(id));
+
+    const handleDelete = (currentBlogId)=>{
+        const {author} = blog.find(dataItem => dataItem.id === Number(currentBlogId))
+        if(author === userName)
+            handleDeleteBlog(currentBlogId)
+        else
+            return
+    }
+
+   
+        
     
   return (
     <section className='flex-9 font-Josefin'>
@@ -17,14 +28,15 @@ const SinglePost = () => {
             />
             <h1 className='text-center m-[10px] text-3xl'>{title ? title : 'Lorem ipsum dolor'}
             <div className='float-right text-sm'>
-                <i className="singleIcon fa-solid fa-pen-to-square"></i>
-                <i className="singleIcon fa-solid fa-trash"></i> 
+                <i className={author === '' ? "fa-solid fa-pen-to-square singleIcon gray" : "fa-solid fa-pen-to-square singleIcon teal"} onClick={()=>handleEditBlog(Number(id))}></i>
+                <i className={ author === '' ? "fa-solid fa-trash singleIcon gray" : "fa-solid fa-trash singleIcon tomato"} onClick={()=>handleDelete(id)}></i> 
             </div>
             </h1>
 
             <div className='flex justify-between text-base text-[#be9656] font-Josefin mb-[20px]'>
                 <span className='ml-[5px] font-bold'>Author :
-                    <span>{userName ? userName : 'unknown'}</span>
+                    
+                    <span>{author ? author : 'unknown'}</span>
                 </span>
                 <span>{time ? time : 'nil'}</span>
 

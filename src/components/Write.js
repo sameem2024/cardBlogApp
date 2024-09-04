@@ -1,10 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { context } from "../context/Global";
 
 const Write = () => {
-    const {addBlog} = useContext(context);
-    const [title,setTitle] = useState('');
-    const [content,setContent] = useState('');
+    const {addBlog,setTitle,setContent,title,content} = useContext(context);
 
    
   return (

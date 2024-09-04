@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar";
+import Layout from "./components/Layout";
 import Write from "./components/Write";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -18,24 +18,27 @@ function App() {
   
   return (
     <>
+        <Routes>
 
-    <Navbar /> 
-    
-      <Routes>
+        <Route path='/' element={<Layout />}> 
+
+            <Route index element = {<HomePage />} />         
+            
+            <Route path='posts' element={<HomePage />} />
+
+            <Route path='register' element={<RegisterPage />} />
+
+            <Route path='login' element= {<LoginPage />} />
+
+            <Route path=':id' element={<SinglePage />} />
+
+            <Route path='write' element={currentUser ? <Write /> : <LoginPage />} />
+
+            <Route path='settings' element= {currentUser ? <SettingsPage /> : <LoginPage />}/>
         
-        <Route path='/'  element={<HomePage />} />
+        </Route>
 
-        <Route path='/posts' element={<HomePage />} />
-
-        <Route path='/register' element={<RegisterPage />} />
-
-        <Route path='/login' element= {<LoginPage />} />
-
-        <Route path='/post/:id' element={<SinglePage />} />
-
-        <Route path='/write' element={currentUser ? <Write /> : <LoginPage />} />
-
-        <Route path='/settings' element= {currentUser ? <SettingsPage /> : <LoginPage />}/>
+       
 
         <Route path='/life' element={<Music category="life" imageList={lifeData}/>} /> 
         <Route path='/music' element={<Music category="music" imageList={musicData}/>} />

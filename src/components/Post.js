@@ -17,7 +17,7 @@ const Post = ({imageItem}) => {
                 </span>
             </div>
             <span className='text-md font-bold  cursor-pointer'>
-                  <Link to={`/post/${id}`}>{imageItem.title ? imageItem.title : 'Lorem ipsum dolor sit amet'}</Link>
+                  <Link to={`/${id}`}>{imageItem.title ? imageItem.title : 'Lorem ipsum dolor sit amet'}</Link>
             </span>
             <hr />
             <span className='font-Raleway italic text-sm font-bold text-[#6f6c6c]'>{imageItem.time ? imageItem.time : 'nil'}</span>
